@@ -1,15 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
-import 'package:gerenciadorsenhas/Data/Senha/senha_sqlite_datasource.dart';
-import 'package:gerenciadorsenhas/cadsenhas.dart';
-import 'package:gerenciadorsenhas/listaCartao.dart';
 import 'Data/Perfil/perfil_sqlite_datasource.dart';
-import 'Data/Senha/senha_entity.dart';
-import 'cadcartao.dart';
 import 'geradorsenha.dart';
 import 'perfil.dart';
-import 'listaSenhas.dart';
+
 
 class menuprincipal extends StatefulWidget {
   final String email;
@@ -76,8 +70,58 @@ class _menuprincipalState extends State<menuprincipal> {
         ),
         appBar: AppBar(
             backgroundColor: Colors.teal, title: const Text('Menu Principal')),
-      ),
-    );
+
+            body: Container(
+              alignment: Alignment.center,
+
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                   Text("Deslize para cadastrar ou listar", 
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      ),
+                  SizedBox(height: 30),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Row(
+                        
+                        children: [
+                      Icon(Icons.arrow_back),
+                      Text("Senhas", 
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      ),                      
+                        ],
+                      ),
+                      Row(
+                       
+                        children: [
+                       Text("Cartões", 
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      ),
+                      Icon(Icons.arrow_forward),
+                       
+                       
+                        ],
+                      )
+                    ],
+                  ),
+              
+                ],
+              )
+              )
+              
+            ),
+      );
   }
 
   Future<String> getNome(email) async {

@@ -1,6 +1,11 @@
 // main.dart
+import 'dart:io';
+
 import 'package:flutter/material.dart';
-import 'Data/Perfil/perfil_Entity.dart';
+import 'package:gerenciadorsenhas/home.dart';
+import 'package:gerenciadorsenhas/listaCartao.dart';
+import 'package:image_picker/image_picker.dart';
+
 import 'Data/Perfil/perfil_sqlite_datasource.dart';
 import 'main.dart';
 
@@ -24,18 +29,18 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-//  File? _image;
-  // final _picker = ImagePicker();
+ File? _image;
+   final _picker = ImagePicker();
 
-//  Future<void> _openImagePicker() async {
-//    final XFile? pickedImage =
-//        await _picker.pickImage(source: ImageSource.gallery);
-//    if (pickedImage != null) {
-//      setState(() {
-//        _image = File(pickedImage.path);
-//      });
-//    }
-//  }
+  Future<void> _openImagePicker() async {
+    final XFile? pickedImage =
+        await _picker.pickImage(source: ImageSource.gallery);
+    if (pickedImage != null) {
+      setState(() {
+        _image = File(pickedImage.path);
+      });
+    }
+  }
   String _nome = '';
   String _email = '';
   String _senha = '';
@@ -57,27 +62,27 @@ class _HomePageState extends State<HomePage> {
           child: Column(children: [
             Center(
               child: ElevatedButton(
-                onPressed: null, //print('_openImagePicker'),
+                onPressed: _openImagePicker,
                 child: const Text('Selecione a imagem'),
               ),
             ),
             const SizedBox(height: 35),
-            // Container(
-            //   alignment: Alignment.center,
-            //   width: double.infinity,
-            //   height: 300,
-            //   color: Colors.grey[300],
-            //   child: _image != null
-            //       ? Image.file(_image!, fit: BoxFit.cover)
-            //       : const Text('Por favor selecione a imagem'),
-            //),
-            const SizedBox(height: 35),
+             Container(
+               alignment: Alignment.center,
+               width: double.infinity,
+               height: 300,
+               color: Colors.grey[300],
+               child: _image != null
+                   ? Image.file(_image!, fit: BoxFit.cover)
+                   : const Text('Por favor selecione a imagem'),
+            ),
+            const SizedBox(height: 15),
             nome(),
-            const SizedBox(height: 35),
+            const SizedBox(height: 15),
             email(),
-            const SizedBox(height: 35),
+            const SizedBox(height: 15),
             senha(),
-            const SizedBox(height: 35),
+            const SizedBox(height: 15),
             //salvar(_nome, _email, _senha),
           ]),
         ),

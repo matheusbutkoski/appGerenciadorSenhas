@@ -9,7 +9,7 @@ class listaSenhas extends StatelessWidget {
     return MaterialApp(
       title: "Lista de senhas",
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.lightBlue,
       ),
       home: MyHomePage(),
     );
@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
             },
             child: Text(
               "Excluir todos",
-              style: TextStyle(color: Colors.yellow),
+              style: TextStyle(color: Colors.black),
             ),
           )
         ],

@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gerenciadorsenhas/Data/Cartao/cartao_entity.dart';
 import 'package:gerenciadorsenhas/Data/Cartao/cartao_sqlite_datasource.dart';
 import 'package:gerenciadorsenhas/cadcartao.dart';
-import 'package:gerenciadorsenhas/cadsenhas.dart';
-import 'package:gerenciadorsenhas/menuprincipal.dart';
-import 'Data/Senha/senha_entity.dart';
-import 'Data/Senha/senha_sqlite_datasource.dart';
+
 
 class listaCartao extends StatelessWidget {
   @override
@@ -13,7 +10,7 @@ class listaCartao extends StatelessWidget {
     return MaterialApp(
       title: "Lista de Cartoes",
       theme: ThemeData(
-        primarySwatch: Colors.yellow,
+        primarySwatch: Colors.lightGreen,
       ),
       home: MyHomePage(),
     );

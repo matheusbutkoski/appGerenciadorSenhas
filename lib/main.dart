@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:gerenciadorsenhas/Data/Perfil/perfil_sqlite_datasource.dart';
 import 'package:gerenciadorsenhas/home.dart';
 import 'package:gerenciadorsenhas/perfil.dart';
-import 'menuprincipal.dart';
+
 import 'recuperarsenha.dart';
 
 void main() {
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: const Text('Login')),
+        appBar: AppBar(title: const Text('Login'), backgroundColor: const Color.fromARGB(255, 5, 43, 75),),
         body: _Login(),
       ),
     );
@@ -36,9 +36,9 @@ class _Login extends StatelessWidget {
                 alignment: Alignment.center,
                 padding: const EdgeInsets.all(10),
                 child: const Text(
-                  'Tela de Login app',
+                  'Tela de Login',
                   style: TextStyle(
-                      color: Colors.blue,
+                      color: const Color.fromARGB(255, 5, 43, 75),
                       fontWeight: FontWeight.w500,
                       fontSize: 30),
                 )),
@@ -90,6 +90,7 @@ class _Login extends StatelessWidget {
                 height: 50,
                 padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                 child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 5, 43, 75)),
                     child: const Text('Login'),
                     onPressed: () async {
                       if (await perfilSQLiteDatasource()

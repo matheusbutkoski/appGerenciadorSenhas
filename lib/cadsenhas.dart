@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gerenciadorsenhas/listaSenhas.dart';
-import 'Data/Senha/senha_entity.dart';
+
 import 'Data/Senha/senha_sqlite_datasource.dart';
 
 class cadsenhas extends StatefulWidget {
